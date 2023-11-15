@@ -1,0 +1,23 @@
+<div class="container">
+  <h1><%= @restaurant.name %></h1>
+  <p><strong>Infos</strong></p>
+  <div class="alert alert-secondary col-3">
+    <p><%= @restaurant.address %></p>
+    <p>📞 <%= @restaurant.phone_number %></p>
+    <p><%= @restaurant.category %></p>
+  </div>
+  <p><strong>Reviews</strong></p>
+  <div class="alert alert-warning col-3">
+    <ul class="list-group">
+      <% @restaurant.reviews.each do |review| %>
+        <li class="list-group-item"><%= review.content %></li>
+      <% end %>
+    </ul>
+  </div>
+  <%= link_to new_restaurant_review_path(@restaurant) do %>
+  <p><i class="fa-solid fa-plus"></i>Add new review</p>
+  <% end %>
+   <%= link_to restaurants_path do %>
+      <p><i class="fa-solid fa-rotate-left "></i>Back to restaurants</p>
+    <% end %>
+</div>

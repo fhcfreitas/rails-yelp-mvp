@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>New restaurant</h1>
+  <%= render "form", restaurant: @restaurant %>
+  <div class="row mt-3">
+    <%= link_to restaurants_path do %>
+      <p><i class="fa-solid fa-rotate-left "></i>Back to restaurants</p>
+    <% end %>
+  </div>
+</div>
